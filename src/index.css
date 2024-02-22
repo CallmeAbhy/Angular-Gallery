@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*Base Theme setup */
+:root {
+  --background-color: theme(colors.zinc.50);
+  --card-color: theme(colors.gray.100);
+  --body-color: theme(colors.gray.950);
+  --body-off-color: theme(colors.white);
+  --accent-color: theme(colors.blue.500);
+  --link-color: theme(colors.blue.700);
+  --link-hover-color: theme(colors.blue.700 / 80%);
+  --danger-color: theme(colors.red.600);
+  --danger-hover-color: theme(colors.red.500);
+}
+
+::selection {
+  @apply bg-accent text-body-off;
+}
+
+@layer base {
+  body {
+    @apply bg-background text-body antialiased;
+  }
+
+  h1 {
+    @apply text-3xl font-semibold xl:text-4xl;
+  }
+  h2 {
+    @apply text-2xl font-semibold xl:text-3xl;
+  }
+  h3 {
+    @apply text-xl font-semibold xl:text-2xl;
+  }
+  h4 {
+    @apply text-lg font-bold xl:text-xl;
+  }
+  h5 {
+    @apply text-base font-bold xl:text-lg;
+  }
+  h6 {
+    @apply text-sm font-bold xl:text-base;
+  }
+  p,
+  span {
+    @apply text-sm xl:text-base;
+  }
+  small {
+    @apply text-xs font-semibold xl:text-sm;
+  }
+  a {
+    @apply cursor-pointer text-sm font-semibold text-link transition-colors duration-150 hover:text-link-hover xl:text-base;
+  }
+}
+
+/* Custom css */
