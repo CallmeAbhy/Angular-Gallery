@@ -125,11 +125,9 @@ const Gallery = () => {
   }, [])
 
   return (
-    <>
-      <div
-        className={`relative mx-auto max-w-[56rem] rounded-xl border shadow-lg`}
-      >
-        <div className={`rounded-xl `} style={{ backgroundColor: themeColor }}>
+    <div>
+      <div className="relative mx-auto max-w-[56rem] overflow-hidden rounded-xl border shadow-lg">
+        <div className={`rounded-xl`}>
           {/* title portion */}
           <GalleryTitle
             marked={marked}
@@ -153,15 +151,17 @@ const Gallery = () => {
             }}
           >
             <SortableContext items={imageFiles} strategy={rectSortingStrategy}>
-              <div
-                className={`grid grid-cols-2 gap-1 p-4 sm:grid-cols-3 lg:grid-cols-5 [&>*:not(.aspect-auto)]:aspect-square`}
-              >
+              <div className="grid grid-cols-2 gap-4 p-4 sm:grid-cols-3 lg:grid-cols-5 [&>*:not(.aspect-auto)]:aspect-square">
                 {imageFiles.map((img, i) => (
                   <Image
                     key={img.id}
                     image={img}
                     featured={i === 0}
-                    className=" bg-white"
+                    style={{
+                      border: `4px solid ${themeColor}`,
+                      padding: "4px",
+                    }}
+                    className="bg-red rounded-md"
                     isMarked={marked.includes(img.id)}
                     handleMarked={handleMarked}
                     handleFeatured={handleFeatured}
@@ -202,7 +202,7 @@ const Gallery = () => {
 
       {/* imagebox dialogue for bigger view. It portals to document-body by default */}
       <ImageBox imgBoxElm={imgBoxElm} setImgBoxElm={setImgBoxElm} />
-    </>
+    </div>
   )
 }
 

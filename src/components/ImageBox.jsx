@@ -50,7 +50,7 @@ const ImageBox = ({ imgBoxElm: img, setImgBoxElm }) => {
                   <div className="mt-2 flex flex-wrap items-center gap-2">
                     <small className="text-gray-700 xl:text-xs">
                       <IoInformationCircleOutline className="me-0.5 inline bg-white align-text-bottom text-base " />
-                      Use scrollwheel or pinch to zoom
+                      You Can use ScrollWheel for zoom
                     </small>
                     <button
                       className="ms-auto grid place-items-center rounded-full border-2 bg-white text-2xl opacity-60 hover:opacity-100"

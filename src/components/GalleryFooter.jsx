@@ -10,8 +10,8 @@ const GalleryFooter = memo(({ handleThemeColorChange }) => {
     handleThemeColorChange(newColor)
   }
   return (
-    <div className="flex min-h-[2.5rem] flex-wrap items-center gap-1 border-t border-gray-300 px-4 py-2 xl:gap-2 [&_*]:leading-6">
-      <div className="flex items-center gap-1 xl:gap-2">
+    <div className="flex flex-col items-center gap-4 border-t border-gray-300 p-4 md:flex-row md:p-2">
+      <div className="flex items-center gap-2 md:gap-4">
         <small className="">Project:</small>
         <a
           href="https://www.flaticon.com/free-icon/gallery_9853877"
@@ -26,13 +26,13 @@ const GalleryFooter = memo(({ handleThemeColorChange }) => {
           <small className="">Customizable Image Gallery</small>
         </a>
       </div>
-      <div className="flex items-center gap-2 max-sm:w-full sm:ms-auto">
-        <small className="  sm:ms-auto">Developed by: Abhay Dusane</small>
+      <div className="flex items-center gap-2 md:ml-auto md:gap-4">
+        <small className="md:ml-auto">Developed by: Abhay Dusane</small>
         <a
           href="https://github.com/CallmeAbhy"
           target="_blank"
           rel="noreferrer"
-          className="text-xl text-gray-900 transition-colors hover:text-gray-600 max-sm:ms-auto"
+          className="text-xl text-gray-900 transition-colors hover:text-gray-600"
         >
           <IoLogoGithub className="inline align-text-top" />
         </a>
@@ -46,12 +46,13 @@ const GalleryFooter = memo(({ handleThemeColorChange }) => {
         </a>
       </div>
 
-      <div className="flex items-center gap-2 max-sm:w-full sm:ms-auto">
+      <div className="flex items-center gap-2 md:ml-auto md:gap-4">
         <input
           type="color"
           value={newColor}
           onChange={handleColorChange}
           title="Choose Theme Color"
+          className="rounded border border-gray-300 p-1"
         />
         <button
           onClick={applyNewColor}
